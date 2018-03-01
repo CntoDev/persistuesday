@@ -1,0 +1,202 @@
+﻿# War game mode technical design document
+
+## Game mechanics
+
+Special types are listed in chapter about Game Object Data. Here we list modules, module responsibility and API that defines them.
+
+### Recruitment module
+
+Responsible for handling faction selection by non-aligned new players.
+
+Prefix: ``war_recruitment``
+
+API
+
+	[unit, side] call war_recruitment_fnc_recruitUnit 
+		- recruits unit to side for duration of entire campaign.
+		
+	[object, side] call war_recruitment_fnc_assignRecruitmentRole
+		- converts object to recruitment center for side
+	
+### Guards module
+
+Responsible for creation of guards, control of guards via waypoints or CBA functions.
+
+Prefix: `war_guards`
+
+API
+
+	[] spawn war_guards_fnc_initModule
+		- initializes module
+
+	[[Objective]] spawn war_guards_fnc_bootstrap 
+		- spawns guards across the map for objectives in the list. 
+		
+	[Objective, side] spawn war_guards_fnc_transportReinforcements
+		- spawns reinforcements of the side and transports them towards objective. Reinforcements deploy and start with guard duty.
+
+### Armory module
+
+Initialized armory on event start, saves contents of it periodically, locks vehicles and doors, enables armory commander to unlock vehicles and doors.
+
+Prefix: `war_armory`
+
+API
+	
+	[] spawn war_armory_fnc_initModule
+		- initializes module
+	
+	[Armory] spawn war_armory_fnc_init
+		- initializes contents of the armory from profile namespace on the server		
+		
+	[Armory] spawn war_armory_fnc_save
+		- saves state of all armories to profile namespace
+		
+	[door] call war_armory_fnc_lockDoor
+		- locks door of armory
+		
+	[vehicle] call war_armory_fnc_lockVehicle
+		- locks vehicle
+
+	[door] call war_armory_fnc_unlockDoor
+		- unlocks door of armory
+		
+	[vehicle] call war_armory_fnc_unlockVehicle
+		- unlocks vehicle
+		
+	[unit] call war_armory_fnc_assignArmoryCommanderRole
+		- assigns armory commander role to unit			
+	
+### Factories module
+
+Periodically reproduce new weapons, ammo, equipment and vehicles.
+
+Prefix: `war_factories`
+
+API
+
+	[] spawn war_factories_fnc_initModule
+		- initializes module
+	
+	[Factory] spawn war_factories_fnc_produce
+		- produces gear across the map on start of the day according to equipment production table
+
+### Objectives module
+
+Manages ownership of the objectives (towns, villages and factories).
+
+Prefix: `war_objectives`
+
+API
+
+	[] spawn war_objectives_fnc_initModule
+		- initializes module
+		
+	side = [Objective] call war_objectives_fnc_owner
+		- returns the side that controls the objective
+		
+	boolean = [] call war_objectives_fnc_hasWon	
+		- returns true if any side has achieved final victory
+		
+	side = [] call war_objectives_fnc_victorySide	
+		- returns side that won. If game didn't end returns sideUnknown
+		
+	[Objective] call war_objectives_fnc_updateObjective
+		- updates Objective state. In case Objective has changed ownership NPC from opposite faction will be called out to guard the objective.
+
+### Map module
+
+Updates the strategic map.
+
+Prefix: `war_map`
+
+API
+
+	[] spawn war_map_fnc_initModule
+		- initializes module
+		
+	[Objective, oldSide, newSide] call war_map_fnc_changeOwner
+		- updates the map ownership of the Objective from old side to new side
+		
+	[position, side, enemySide] call war_map_fnc_alert
+		- alerts the players of the side about approaching enemy side on position with a unknown map marker
+		
+### User interface module
+
+Handles local player actions and events.
+
+Prefix: `war_ui`
+
+API
+
+	[] spawn war_ui_respawnPlayer
+		- called from onPlayerRespawn.sqf. Reads the profile namespace of the player and:
+			1. assigns it to a side (civilian, west, east)
+			2. sets the position of the player
+		
+## External Code
+
+This framework uses CBA and ACE frameworks. Map implementations may use objects from different mods.
+
+## Control Loop
+
+Control loop is initialized in initServer.sqf. It has update frequency of 120 seconds. Initally control loop calls initializing functions of modules. Then it updates the state of objectives on every click. World state data will be autosaved every 15 minutes.
+
+## Game Object Data
+
+Common API objects are used as array of attributes. They are listed below.
+
+	Objective:
+		markerName - string - name of the objective marker
+		faction - side - side controlling the objective
+		type - string - type of the objective. Can be "TOWN", "VILLAGE", "FACTORY"
+		
+	Factory:
+		markerName - string - name of the factory marker
+		side - side - factory ownership		
+
+	Armory:
+		markerName - string - name of the armory marker
+		side - side - side of armory
+		boxes - array of Box - supply boxes and their contents
+		vehicle - array of Vehicle - vehicles and their contents
+		
+	Box:
+		type - class - class name of the box
+		position - position - position of the box
+		cargo - Cargo - cargo of the box
+		
+	Cargo:
+		weapons - array of Weapon
+		magazines - array of Magazine
+		items - array of Item
+		backpacks - array of Backpack
+			
+## Data Flow
+
+Mission important data will be stored in the server profile. 
+
+1. All objectives - array of all Objective types.
+2. All armories - array of all Armory types (here is the "loot")
+
+Player profile will contain only faction he enlisted for.
+
+## Mission parameters
+
+TODO
+
+## Artificial Intelligence
+
+TODO
+
+## User Interface
+
+NA
+
+## Art and Video
+
+NA
+
+## Sound and Music
+
+NA

@@ -1,0 +1,38 @@
+onLoadName = "Stratis War";
+author = CNTO;
+
+class CfgFunctions
+{
+	class PSE
+	{
+		class persistence
+		{
+			class saveAll;
+			class loadAll;
+			class getCargo;
+			class loadCargo;			
+		};
+		class ambient
+		{
+			class sit;
+		};
+		class ai
+		{
+			class addRecruitAction;
+		};
+	};
+};
+
+class Extended_PreInit_EventHandlers {
+    class PSE_pre_init_event {
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+    };
+};
+
+class Extended_Init_EventHandlers {
+    class Civilian_F {
+        class Recruit_Soldier_init_eh {
+            init = "_this call PSE_fnc_addRecruitAction;";
+        };
+    };
+};
