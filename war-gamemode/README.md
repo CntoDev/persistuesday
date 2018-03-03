@@ -26,11 +26,8 @@ Prefix: `war_guards`
 
 API
 
-	[] spawn war_guards_fnc_initModule
+	[objectives] spawn war_guards_fnc_initModule
 		- initializes module
-
-	[[Objective]] spawn war_guards_fnc_bootstrap 
-		- spawns guards across the map for objectives in the list. 
 		
 	[Objective, side] spawn war_guards_fnc_transportReinforcements
 		- spawns reinforcements of the side and transports them towards objective. Reinforcements deploy and start with guard duty.
@@ -89,7 +86,7 @@ Prefix: `war_objectives`
 
 API
 
-	[] spawn war_objectives_fnc_initModule
+	[Objective] = [] spawn war_objectives_fnc_initModule
 		- initializes module
 		
 	side = [Objective] call war_objectives_fnc_owner
@@ -103,6 +100,12 @@ API
 		
 	[Objective] call war_objectives_fnc_updateObjective
 		- updates Objective state. In case Objective has changed ownership NPC from opposite faction will be called out to guard the objective.
+		
+	[] call war_objectives_fnc_updateAllObjectives
+		- updates the ownership information on all objectives
+		
+	[] call war_objectives_fnc_saveState
+		- saves the state of all objectives to server profile
 
 ### Map module
 
@@ -176,10 +179,14 @@ Common API objects are used as array of attributes. They are listed below.
 
 Mission important data will be stored in the server profile. 
 
-1. All objectives - array of all Objective types.
+1. All objectives (war_objectives) - array of all Objective types.
 2. All armories - array of all Armory types (here is the "loot")
 
 Player profile will contain only faction he enlisted for.
+
+### Important global vars
+
+war_objectives - array of all objectives.
 
 ## Mission parameters
 

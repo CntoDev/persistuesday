@@ -1,38 +1,32 @@
-onLoadName = "Stratis War";
+onLoadName = "Malden War";
 author = CNTO;
 
 class CfgFunctions
 {
-	class PSE
+	class war_objectives
 	{
-		class persistence
+		class objectives
 		{
-			class saveAll;
-			class loadAll;
-			class getCargo;
-			class loadCargo;			
+			class initModule;
+			class updateAllObjectives;
+			class updateObjective;
+			class hasWon;
+			class victoriousSide;
+			class saveState;
 		};
-		class ambient
+	};
+	
+	class war_guards
+	{
+		class guards
 		{
-			class sit;
-		};
-		class ai
-		{
-			class addRecruitAction;
+			class initModule;
 		};
 	};
 };
 
 class Extended_PreInit_EventHandlers {
-    class PSE_pre_init_event {
+    class war_pre_init_event {
         init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
-    };
-};
-
-class Extended_Init_EventHandlers {
-    class Civilian_F {
-        class Recruit_Soldier_init_eh {
-            init = "_this call PSE_fnc_addRecruitAction;";
-        };
     };
 };

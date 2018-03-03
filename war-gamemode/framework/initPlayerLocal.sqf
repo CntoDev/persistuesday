@@ -8,12 +8,12 @@ if (!didJIP && isMultiplayer) then {
 	sleep 20;
 
 	_titleText = composeText [
-		parseText "<t size='1.5' align='center' font='PuristaMedium'>The Ghosts</t>",
+		parseText "<t size='1.5' align='center' font='PuristaMedium'>War</t>",
 		lineBreak,
 		parseText "<img size='5' image='images\logo.jpg'/>"
 	];
 
-	playMusic "Theme";
+	playMusic "LeadTrack01c_F";
 	sleep 3;
 
 	[_titleText,0,0.4,5,3,0,789] spawn BIS_fnc_dynamicText;
