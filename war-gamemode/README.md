@@ -207,3 +207,41 @@ NA
 ## Sound and Music
 
 NA
+
+## Map port considerations
+
+Town markers should be named with `town_` prefix:
+
+```
+town_larche
+town_latrinite
+town_chapoi
+```
+
+Village markers with `village_` prefix:
+
+```
+village_arudy
+village_lapessagne
+village_lariviere
+village_lolisse
+village_leport
+```
+
+Factory markers with `factory_<name>` and `factory_<name>_ammo`. Ammo objective serves for spawning gear and ammo produced by factory. 
+
+```
+factory_lavalle_ammo
+factory_lavalle
+factory_corton_ammo
+factory_corton
+factory_saint_vehicle
+factory_saint
+```
+
+Recruitment centers should be named like below:
+
+```
+recruitment_east
+recruitment_west
+```
