@@ -245,3 +245,5 @@ Recruitment centers should be named like below:
 recruitment_east
 recruitment_west
 ```
+
+Reinforcements spawn at `transport_east` and `transport_west` markers.
