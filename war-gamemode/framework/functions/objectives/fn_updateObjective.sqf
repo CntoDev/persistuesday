@@ -32,12 +32,14 @@ _dominantSide = _side;
 if (_numberWest > _numberEast && _numberWest > 5*_numberOfDefenders) then {
 	_dominantSide = west;
 	["ObjectiveSeized", [_markerName, _dominantSide, _type]] call CBA_fnc_globalEvent;
+	[_objective, _dominantSide] call war_guards_fnc_transportReinforcements;
 	["West seized " + _markerName, "war_objectives", [true, true, true]] call CBA_fnc_debug;
 };
 
 if (_numberEast > _numberWest && _numberEast > 5*_numberOfDefenders) then {
 	_dominantSide = east;
 	["ObjectiveSeized", [_markerName, _dominantSide, _type]] call CBA_fnc_globalEvent;
+	[_objective, _dominantSide] call war_guards_fnc_transportReinforcements;
 	["East seized " + _markerName, "war_objectives", [true, true, true]] call CBA_fnc_debug;
 };
 
