@@ -27,13 +27,13 @@ if (_objectives isEqualTo []) then {
 		};
 		
 		if (_x find "village_" != -1) then {
-			// marker represents town, create new Objective with neutral owner
+			// marker represents village, create new Objective with neutral owner
 			_objective = [_x, resistance, "VILLAGE"];
 			_objectives pushBack _objective;
 		};
 
 		if (_x find "factory_" != -1) then {
-			// marker represents town, create new Objective with neutral owner
+			// marker represents factory, create new Objective with neutral owner
 			_objective = [_x, resistance, "FACTORY"];
 			_objectives pushBack _objective;
 		};		
