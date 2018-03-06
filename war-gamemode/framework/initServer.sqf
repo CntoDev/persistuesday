@@ -3,7 +3,8 @@
 
 	war_objectives = [] call war_objectives_fnc_initModule;
 	[war_objectives] spawn war_guards_fnc_initModule;		
-		
+	war_armories = [] call war_armory_fnc_initModule;
+	
 	while { !_missionEnded } do {
 		sleep 120;
 		["System control loop update", "war_control", [true, true, true]] call CBA_fnc_debug;		

@@ -1,3 +1,19 @@
+/*
+ * Author: Highway
+ * Gets cargo contents from ammo box.
+ *
+ * Arguments:
+ * 0: ammo box <OBJECT>
+ *
+ * Return Value:
+ * Cargo <ARRAY>
+ *
+ * Example:
+ * [box] call war_armory_fnc_getCargo
+ *
+ * Public: No
+ */
+
 params [["_box", objNull, [objNull]]];
 private "_subcontainerContents";
 
