@@ -9,7 +9,7 @@
  * List of armories <ARRAY>
  *
  * Example:
- * war_armories = [] spawn war_armory_fnc_initModule
+ * war_armories = [] call war_armory_fnc_initModule
  *
  * Public: Yes
  */

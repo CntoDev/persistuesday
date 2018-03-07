@@ -43,8 +43,8 @@ API
 	[Armory] = [] spawn war_armory_fnc_initModule
 		- initializes module from profile or map
 		
-	[[Armory]] spawn war_armory_fnc_save
-		- saves state of all armories to profile namespace
+	[Armory] = [[Armory]] call war_armory_fnc_saveState
+		- updates array of armories and saves state to server profile namespace
 		
 	[door] call war_armory_fnc_lockDoor
 		- locks door of armory
