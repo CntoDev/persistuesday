@@ -10,7 +10,7 @@
 		["System control loop update", "war_control", [true, true, true]] call CBA_fnc_debug;		
 		war_objectives = [war_objectives] call war_objectives_fnc_updateAllObjectives;
 		[war_objectives] call war_objectives_fnc_saveState;
-		war_armories = [war_armories] call war_armories_fnc_saveState;
+		war_armories = [war_armories] call war_armory_fnc_saveState;
 		_missionEnded = [war_objectives] call war_objectives_fnc_hasWon;		
 	};
 	
