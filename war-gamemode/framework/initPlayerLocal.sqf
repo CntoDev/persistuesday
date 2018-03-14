@@ -8,9 +8,9 @@ if (!didJIP && isMultiplayer) then {
 	sleep 20;
 
 	_titleText = composeText [
-		parseText "<t size='1.5' align='center' font='PuristaMedium'>War</t>",
+		parseText "<t size='2' align='center' font='PuristaMedium'>War</t>",
 		lineBreak,
-		parseText "<img size='5' image='images\logo.jpg'/>"
+		parseText "<t size='0.8' align='center' font='PuristaMedium'>on Malden</t>"
 	];
 
 	playMusic "LeadTrack01c_F";
@@ -29,6 +29,14 @@ if (!didJIP && isMultiplayer) then {
 
 enableEngineArtillery false;  // disable artillery computer
 
-if (hasInterface) then {
-	[player] execVM "addPlayerGear.sqf";
+if (hasInterface) then {	
+	recruiter_east addAction ["Join prorussian rebels", {
+		private _soldier = param [1];
+		[_soldier, east] call war_recruitment_fnc_recruitUnit;
+	}];
+
+	recruiter_west addAction ["Join proamerican rebels", {
+		private _soldier = param [1];
+		[_soldier, west] call war_recruitment_fnc_recruitUnit;
+	}];	
 };

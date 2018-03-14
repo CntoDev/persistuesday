@@ -3,6 +3,13 @@ author = CNTO;
 
 class CfgFunctions
 {
+	class war_recruitment
+	{
+		class recruitment
+		{
+			class recruitUnit;
+		};
+	};
 	class war_objectives
 	{
 		class objectives

@@ -13,10 +13,7 @@ Prefix: ``war_recruitment``
 API
 
 	[unit, side] call war_recruitment_fnc_recruitUnit 
-		- recruits unit to side for duration of entire campaign.
-		
-	[object, side] call war_recruitment_fnc_assignRecruitmentRole
-		- converts object to recruitment center for side
+		- recruits unit to side for duration of entire campaign.		
 	
 ### Guards module
 
