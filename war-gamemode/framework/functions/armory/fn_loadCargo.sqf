@@ -1,3 +1,20 @@
+/*
+ * Author: Commy2, Highway
+ * Loads ammo box from cargo.
+ *
+ * Arguments:
+ * 0: ammo box <OBJECT>
+ * 1: cargo <ARRAY>
+ *
+ * Return Value:
+ * None
+ *
+ * Example:
+ * [box, cargo] call war_armory_fnc_loadCargo
+ *
+ * Public: No
+ */
+ 
 params [["_box", objNull, [objNull]], ["_cargoArray", [], [[]]]];
 
 clearWeaponCargoGlobal _box;

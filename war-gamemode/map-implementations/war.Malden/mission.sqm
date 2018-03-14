@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=837;
+		nextID=858;
 	};
 	class MarkerIDProvider
 	{
-		nextID=20;
+		nextID=24;
 	};
 	class Camera
 	{
-		pos[]={10198.895,79.090485,3998.5505};
-		dir[]={-0.66076517,-0.75034416,-0.019968569};
-		up[]={-0.74999905,0.66104752,-0.022665236};
-		aside[]={-0.030205842,8.3761461e-007,0.99955702};
+		pos[]={3262.6704,135.78734,8394.334};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -52,13 +52,18 @@ addons[]=
 	"rds_A2_Civilians",
 	"A3_Weapons_F",
 	"A3_Characters_F_Exp",
-	"po_factions_afr"
+	"po_factions_afr",
+	"rhs_c_weapons",
+	"rhs_c_cars",
+	"rhs_c_a2port_car",
+	"rhsusf_vehicles",
+	"rhsusf_c_weapons"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=24;
+		items=29;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -210,6 +215,39 @@ class AddonsMetaData
 			name="po_factions_afr";
 			author="Leight, Keeway";
 		};
+		class Item24
+		{
+			className="rhs_c_weapons";
+			name="AFRF Weapons Pack";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item25
+		{
+			className="rhs_c_cars";
+			name="Tigr vehicles";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item26
+		{
+			className="rhs_c_a2port_car";
+			name="A2 ported cars";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item27
+		{
+			className="rhsusf_vehicles";
+			name="rhsusf_vehicles";
+		};
+		class Item28
+		{
+			className="rhsusf_c_weapons";
+			name="RHSUSF Weapons & Accessories";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
 	};
 };
 randomSeed=6036509;
@@ -304,7 +342,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=234;
+		items=245;
 		class Item0
 		{
 			dataType="Object";
@@ -4579,7 +4617,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={3210.54,48.248974,8479.9355};
-			angle=4.5474887;
+			angle=4.5474882;
 			class Attributes
 			{
 				name="armory_west";
@@ -4977,6 +5015,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=763;
@@ -6022,6 +6061,172 @@ class Mission
 			type="Empty";
 			id=836;
 			atlOffset=0.00019836426;
+		};
+		class Item234
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={1623.201,3.552,4645.5488};
+			};
+			title="West base";
+			description="West base, edit contents of the boxes for the first run.";
+			id=842;
+			atlOffset=4.7445297e-005;
+		};
+		class Item235
+		{
+			dataType="Marker";
+			position[]={6791.5962,77.195,5407.561};
+			name="respawn_east";
+			type="Empty";
+			id=848;
+			atlOffset=-0.00020599365;
+		};
+		class Item236
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6803.4238,77.570648,5404.9429};
+				angles[]={6.2805562,0,6.2601166};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=849;
+			type="rhs_mags_crate";
+			atlOffset=0.18693542;
+		};
+		class Item237
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6803.5103,77.70916,5403.4634};
+				angles[]={6.2805562,3.5222249,6.2601166};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=850;
+			type="rhs_weapon_crate";
+			atlOffset=0.22401428;
+		};
+		class Item238
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6790.5918,81.815079,5383.3755};
+				angles[]={0.094913706,0.14906959,6.2057409};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=851;
+			type="rhs_tigr_3camo_msv";
+			atlOffset=-0.001739502;
+		};
+		class Item239
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6792.9253,79.972443,5391.7676};
+				angles[]={0.10283634,0.20877111,6.2025604};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=852;
+			type="rhs_uaz_open_MSV_01";
+			atlOffset=-0.0050201416;
+		};
+		class Item240
+		{
+			dataType="Marker";
+			position[]={3229.8269,48.047001,8493.6016};
+			name="respawn_west";
+			type="Empty";
+			id=853;
+			atlOffset=-1.9073486e-005;
+		};
+		class Item241
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3224.428,51.076344,8459.3027};
+				angles[]={0.11390495,2.7535017,0.087773547};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=854;
+			type="rhsusf_m1025_d";
+			atlOffset=-0.02627182;
+		};
+		class Item242
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3234.7446,52.134335,8461.9688};
+				angles[]={0.056738663,3.3215725,0.13674109};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=855;
+			type="rhsusf_m998_d_2dr";
+			atlOffset=-0.023136139;
+		};
+		class Item243
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3227.3472,49.096828,8481.9893};
+				angles[]={0.021595482,2.7626958,0.10600159};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=856;
+			type="rhsusf_mags_crate";
+			atlOffset=-0.015350342;
+		};
+		class Item244
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3230.0315,49.310928,8483.248};
+				angles[]={0.065506049,2.8436291,0.062320013};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=857;
+			type="rhsusf_weapon_crate";
+			atlOffset=-0.023685455;
 		};
 	};
 };

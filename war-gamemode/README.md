@@ -40,14 +40,11 @@ Prefix: `war_armory`
 
 API
 	
-	[] spawn war_armory_fnc_initModule
-		- initializes module
-	
-	[Armory] spawn war_armory_fnc_init
-		- initializes contents of the armory from profile namespace on the server		
+	[Armory] = [] spawn war_armory_fnc_initModule
+		- initializes module from profile or map
 		
-	[Armory] spawn war_armory_fnc_save
-		- saves state of all armories to profile namespace
+	[Armory] = [[Armory]] call war_armory_fnc_saveState
+		- updates array of armories and saves state to server profile namespace
 		
 	[door] call war_armory_fnc_lockDoor
 		- locks door of armory
@@ -62,7 +59,16 @@ API
 		- unlocks vehicle
 		
 	[unit] call war_armory_fnc_assignArmoryCommanderRole
-		- assigns armory commander role to unit			
+		- assigns armory commander role to unit		
+
+	[Box] call war_armory_fnc_createBox
+		- creates an ammo box with associated Cargo
+		
+	Cargo = [box] call war_armory_fnc_getCargo		
+		- gets cargo of the box
+		
+	[box, Cargo] call war_armory_fnc_loadCargo
+		- loads cargo into the box
 	
 ### Factories module
 
@@ -162,10 +168,10 @@ Common API objects are used as array of attributes. They are listed below.
 		markerName - string - name of the armory marker
 		side - side - side of armory
 		boxes - array of Box - supply boxes and their contents
-		vehicle - array of Vehicle - vehicles and their contents
+		vehicle - array of Vehicle - vehicles
 		
 	Box:
-		type - class - class name of the box
+		type - string - class name of the box
 		position - position - position of the box
 		cargo - Cargo - cargo of the box
 		
@@ -174,6 +180,10 @@ Common API objects are used as array of attributes. They are listed below.
 		magazines - array of Magazine
 		items - array of Item
 		backpacks - array of Backpack
+		
+	Vehicle:
+		type - string - class name
+		position - position - position of vehicle
 			
 ## Data Flow
 
@@ -187,6 +197,7 @@ Player profile will contain only faction he enlisted for.
 ### Important global vars
 
 war_objectives - array of all objectives.
+war_armories - array of all armories.
 
 ## Mission parameters
 

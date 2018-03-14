@@ -26,6 +26,18 @@ class CfgFunctions
 			class deleteVehicle;
 		};
 	};
+	
+	class war_armory
+	{
+		class armory
+		{
+			class initModule;
+			class createBox;
+			class loadCargo;
+			class getCargo;
+			class saveState;
+		};
+	};
 };
 
 class Extended_PreInit_EventHandlers {
