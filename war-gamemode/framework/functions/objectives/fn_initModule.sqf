@@ -32,7 +32,7 @@ if (_objectives isEqualTo []) then {
 			_objectives pushBack _objective;
 		};
 
-		if (_x find "factory_" != -1) then {
+		if (_x find "factory_" != -1 && _x find "_vehicle" == -1 && _x find "_ammo" == -1) then {
 			// marker represents factory, create new Objective with neutral owner
 			_objective = [_x, resistance, "FACTORY"];
 			_objectives pushBack _objective;

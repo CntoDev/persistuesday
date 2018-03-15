@@ -2,6 +2,7 @@
 	_missionEnded = false;
 
 	war_objectives = [] call war_objectives_fnc_initModule;
+	[war_objectives] call war_map_fnc_initModule;
 	[war_objectives] spawn war_guards_fnc_initModule;		
 	war_armories = [] call war_armory_fnc_initModule;
 	

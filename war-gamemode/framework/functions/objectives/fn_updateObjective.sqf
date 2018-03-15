@@ -34,6 +34,7 @@ if (_numberWest > _numberEast && _numberWest > 5*_numberOfDefenders) then {
 	["ObjectiveSeized", [_markerName, _dominantSide, _type]] call CBA_fnc_globalEvent;
 	[_objective, _dominantSide] call war_guards_fnc_transportReinforcements;
 	["West seized " + _markerName, "war_objectives", [true, true, true]] call CBA_fnc_debug;
+	[[_markerName, _dominantSide, _type]] call war_map_fnc_updateMarker;
 };
 
 if (_numberEast > _numberWest && _numberEast > 5*_numberOfDefenders) then {
@@ -41,6 +42,7 @@ if (_numberEast > _numberWest && _numberEast > 5*_numberOfDefenders) then {
 	["ObjectiveSeized", [_markerName, _dominantSide, _type]] call CBA_fnc_globalEvent;
 	[_objective, _dominantSide] call war_guards_fnc_transportReinforcements;
 	["East seized " + _markerName, "war_objectives", [true, true, true]] call CBA_fnc_debug;
+	[[_markerName, _dominantSide, _type]] call war_map_fnc_updateMarker;
 };
 
 [_markerName, _dominantSide, _type]

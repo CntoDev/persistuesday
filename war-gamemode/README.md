@@ -118,11 +118,11 @@ Prefix: `war_map`
 
 API
 
-	[] spawn war_map_fnc_initModule
+	[[Objective]] call war_map_fnc_initModule
 		- initializes module
 		
-	[Objective, oldSide, newSide] call war_map_fnc_changeOwner
-		- updates the map ownership of the Objective from old side to new side
+	[Objective] call war_map_fnc_updateMarker
+		- updates the map ownership of the Objective
 		
 	[position, side, enemySide] call war_map_fnc_alert
 		- alerts the players of the side about approaching enemy side on position with a unknown map marker
