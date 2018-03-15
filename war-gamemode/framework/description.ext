@@ -45,6 +45,15 @@ class CfgFunctions
 			class saveState;
 		};
 	};
+	
+	class war_map
+	{
+		class map
+		{
+			class initModule;
+			class updateMarker;
+		};
+	};
 };
 
 class Extended_PreInit_EventHandlers {

@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=884;
+		nextID=885;
 	};
 	class MarkerIDProvider
 	{
-		nextID=31;
+		nextID=32;
 	};
 	class Camera
 	{
-		pos[]={3582.5012,131.73924,8496.7422};
-		dir[]={-0.68390483,-0.66556853,0.29883409};
-		up[]={-0.60989076,0.74633247,0.26649427};
-		aside[]={0.40039995,1.7415732e-007,0.91634327};
+		pos[]={5110,836.5238,7331.9678};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -6241,9 +6241,6 @@ class Mission
 			};
 			class Attributes
 			{
-				combatMode="GREEN";
-				behaviour="SAFE";
-				speedMode="LIMITED";
 				dynamicSimulation=1;
 			};
 			id=867;
@@ -6263,7 +6260,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7127.0273,73.172516,6135.042};
-				angles[]={-0,2.9434619,0};
+				angles[]={0,2.9434619,0};
 			};
 			side="Empty";
 			flags=4;
@@ -6403,8 +6400,6 @@ class Mission
 			};
 			class Attributes
 			{
-				combatMode="GREEN";
-				behaviour="SAFE";
 				speedMode="LIMITED";
 				dynamicSimulation=1;
 			};
@@ -6464,8 +6459,6 @@ class Mission
 			};
 			class Attributes
 			{
-				combatMode="GREEN";
-				behaviour="SAFE";
 				dynamicSimulation=1;
 			};
 			id=880;
@@ -6497,7 +6490,6 @@ class Mission
 			};
 			class Attributes
 			{
-				behaviour="SAFE";
 				speedMode="LIMITED";
 				dynamicSimulation=1;
 			};
