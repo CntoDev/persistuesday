@@ -29,7 +29,24 @@ if (!didJIP && isMultiplayer) then {
 
 enableEngineArtillery false;  // disable artillery computer
 
-if (hasInterface) then {	
+if (hasInterface) then {
+	_createBaseMarker = {
+		params ["_side"];
+		
+		if (_side == sideUnknown) exitWith {};
+		
+		private _respawnMarker = 
+			switch (_side) do {
+				case east: { "respawn_east" };
+				case west: { "respawn_west" };
+			};
+			
+		_markerBase = createMarkerLocal ["base_local", getMarkerPos _respawnMarker];
+		_markerBase setMarkerShapeLocal "ICON";
+		_markerBase setMarkerTypeLocal "hd_start";
+		_markerBase setMarkerTextLocal "Base";
+	};
+	
 	recruiter_east addAction ["Join prorussian rebels", {
 		private _soldier = param [1];
 		[_soldier, east] call war_recruitment_fnc_recruitUnit;
@@ -38,5 +55,9 @@ if (hasInterface) then {
 	recruiter_west addAction ["Join proamerican rebels", {
 		private _soldier = param [1];
 		[_soldier, west] call war_recruitment_fnc_recruitUnit;
-	}];	
+	}];
+	
+	private _existingAllegiance = profileNamespace getVariable ["war_allegiance", sideUnknown]; // executed on client's machine	
+	[_existingAllegiance] call war_recruitment_fnc_createBaseMarker;
 };
+
