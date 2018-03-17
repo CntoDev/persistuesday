@@ -1,5 +1,5 @@
 onLoadName = "Malden War";
-author = CNTO;
+author = Highway;
 
 class CfgFunctions
 {
@@ -8,6 +8,7 @@ class CfgFunctions
 		class recruitment
 		{
 			class recruitUnit;
+			class createBaseMarker;
 		};
 	};
 	class war_objectives
@@ -20,6 +21,7 @@ class CfgFunctions
 			class hasWon;
 			class victoriousSide;
 			class saveState;
+			class resetGame;
 		};
 	};
 	
@@ -52,6 +54,14 @@ class CfgFunctions
 		{
 			class initModule;
 			class updateMarker;
+		};
+	};
+	
+	class war_factory
+	{
+		class factory
+		{
+			class produce;
 		};
 	};
 };

@@ -30,3 +30,5 @@ if (_existingAllegiance == sideUnknown) then {
 		hint "You have already joined side.";
 	};
 };
+
+[_side] call war_recruitment_fnc_createBaseMarker;
