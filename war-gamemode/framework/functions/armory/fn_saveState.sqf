@@ -32,7 +32,7 @@ private _updateArmoryContents = {
 			[typeOf _x, getPos _x, [_x] call war_armory_fnc_getCargo]
 		}, // array of Box
 		_vehicles apply {
-			[typeOf _x, getPos _x]
+			[typeOf _x, getPos _x, getDir _x]
 		} // array of Vehicle
 	] // returns Armory
 };

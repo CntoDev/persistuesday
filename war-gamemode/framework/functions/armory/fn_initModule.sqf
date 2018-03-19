@@ -30,7 +30,7 @@ if (_armories isEqualTo []) then {
 				[typeOf _x, getPos _x, [_x] call war_armory_fnc_getCargo]
 			},
 			_vehicles apply {
-				[typeOf _x, getPos _x]
+				[typeOf _x, getPos _x, getDir _x]
 			} // create array of vehicles
 		]; // adds armory	
 	} forEach [
@@ -58,9 +58,12 @@ if (_armories isEqualTo []) then {
 		
 		// create empty vehicles
 		{
-			_x params ["_vehicleType", "_vehiclePosition"];
-			_vehicleType createVehicle _vehiclePosition;
-			sleep 0.5;
+			_x params ["_vehicleType", "_vehiclePosition", "_vehicleDir"];
+			
+			private _vehicle = createVehicle [_vehicleType, _vehiclePosition, [], 0, "CAN_COLLIDE"];
+			_vehicle setDir _vehicleDir;
+			
+			sleep 2;
 			// TODO lock vehicles
 		} forEach _vehicles;
 	} forEach _armories;
