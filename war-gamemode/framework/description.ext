@@ -1,0 +1,73 @@
+onLoadName = "Malden War";
+author = Highway;
+
+class CfgFunctions
+{
+	class war_recruitment
+	{
+		class recruitment
+		{
+			class recruitUnit;
+			class createBaseMarker;
+		};
+	};
+	class war_objectives
+	{
+		class objectives
+		{
+			class initModule;
+			class updateAllObjectives;
+			class updateObjective;
+			class hasWon;
+			class victoriousSide;
+			class saveState;
+			class resetGame;
+		};
+	};
+	
+	class war_guards
+	{
+		class guards
+		{
+			class initModule;
+			class transportReinforcements;
+			class getGuardData;
+			class deleteVehicle;
+		};
+	};
+	
+	class war_armory
+	{
+		class armory
+		{
+			class initModule;
+			class createBox;
+			class loadCargo;
+			class getCargo;
+			class saveState;
+		};
+	};
+	
+	class war_map
+	{
+		class map
+		{
+			class initModule;
+			class updateMarker;
+		};
+	};
+	
+	class war_factory
+	{
+		class factory
+		{
+			class produce;
+		};
+	};
+};
+
+class Extended_PreInit_EventHandlers {
+    class war_pre_init_event {
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+    };
+};

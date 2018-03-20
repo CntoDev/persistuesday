@@ -1,0 +1,5 @@
+# checkout text file with platform-native line breaks
+# (LF on unix, CRLF on windows)
+* text=auto
+*.ogg filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
