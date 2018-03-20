@@ -1,6 +1,7 @@
 [] spawn {
 	_missionEnded = false;
 
+	[] call war_environment_fnc_setDate;
 	war_objectives = [] call war_objectives_fnc_initModule;
 	[war_objectives] call war_map_fnc_initModule;
 	[war_objectives] spawn war_guards_fnc_initModule;		
