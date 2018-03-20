@@ -16,3 +16,4 @@
 profileNamespace setVariable ["war_objectives", nil];
 profileNamespace setVariable ["war_armories", nil];
 profileNamespace setVariable ["war_allegiance",nil];
+profileNamespace setVariable ["war_time", nil];
