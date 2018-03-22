@@ -19,8 +19,7 @@ _time = profileNamespace getVariable ["war_time", []];
 if (_time isEqualTo []) then {
 	_time = date;
 } else {
+	setDate _time;
 	skipTime 8;
 	_time = date;
 };
-
-profileNamespace setVariable ["war_time", _time];

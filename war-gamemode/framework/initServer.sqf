@@ -14,6 +14,8 @@
 		war_objectives = [war_objectives] call war_objectives_fnc_updateAllObjectives;
 		[war_objectives] call war_objectives_fnc_saveState;
 		war_armories = [war_armories] call war_armory_fnc_saveState;
+		
+		profileNamespace setVariable ["war_time", date];
 		_missionEnded = [war_objectives] call war_objectives_fnc_hasWon;		
 	};
 	
