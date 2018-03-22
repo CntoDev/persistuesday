@@ -64,6 +64,14 @@ class CfgFunctions
 			class produce;
 		};
 	};
+	
+	class war_environment
+	{
+		class environment
+		{
+			class setDate;
+		};
+	};
 };
 
 class Extended_PreInit_EventHandlers {
