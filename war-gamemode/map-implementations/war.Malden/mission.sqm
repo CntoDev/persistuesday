@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=13;
+		nextID=18;
 	};
 	class Camera
 	{
-		pos[]={6785.9746,140.43204,5293.5132};
-		dir[]={-0.31150943,-0.64661235,0.69632113};
-		up[]={-0.26405293,0.7628175,0.59024119};
-		aside[]={0.91282177,3.8882717e-008,0.40836421};
+		pos[]={7518.1182,49.885826,10556.168};
+		dir[]={-0.48692027,-0.52553177,-0.69766319};
+		up[]={-0.30077562,0.85077095,-0.43095282};
+		aside[]={-0.82003027,5.363836e-008,0.57232445};
 	};
 };
 binarizationWanted=0;
@@ -6135,7 +6135,6 @@ class Mission
 			title="West base";
 			description="West base, edit contents of the boxes for the first run.";
 			id=842;
-			atlOffset=0.20957947;
 		};
 		class Item224
 		{
@@ -6612,14 +6611,13 @@ class Mission
 				angles[]={0,0.79634136,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				dynamicSimulation=1;
 			};
 			id=885;
 			type="rhsusf_weapon_crate";
-			atlOffset=0.00045776367;
+			atlOffset=0.66999817;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -10010,19 +10008,18 @@ class Mission
 				class Item26
 				{
 					dataType="Waypoint";
-					position[]={7497.7295,28.967194,10512.268};
+					position[]={7496.5073,28.899118,10520.756};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=1303;
 					type="Move";
-					atlOffset=2.4795532e-005;
 				};
 				class Item27
 				{
 					dataType="Waypoint";
-					position[]={7499.7979,28.869543,10507.767};
+					position[]={7498.8906,28.911098,10512.535};
 					type="Guard";
 					class Effects
 					{
@@ -10497,10 +10494,11 @@ class Mission
 			position[]={6175.623,121.60844,8728.3096};
 			class Attributes
 			{
+				text="QRF north";
 				sizeA=2700;
 				sizeB=2700;
 				activationType="GUER D";
-				activationBy="GUER";
+				activationBy="ANYPLAYER";
 			};
 			id=1305;
 			type="EmptyDetectorAreaR250";
@@ -10508,13 +10506,14 @@ class Mission
 		class Item304
 		{
 			dataType="Trigger";
-			position[]={5833.7432,61.097866,3687.7563};
+			position[]={5833.7432,61.097862,3687.7561};
 			class Attributes
 			{
+				text="QRF south";
 				sizeA=2700;
 				sizeB=2700;
 				activationType="GUER D";
-				activationBy="GUER";
+				activationBy="ANYPLAYER";
 			};
 			id=1306;
 			type="EmptyDetectorAreaR250";
@@ -10978,14 +10977,13 @@ class Mission
 				class Item26
 				{
 					dataType="Waypoint";
-					position[]={5113.9644,28.700062,1242.7733};
+					position[]={5113.0869,28.389517,1240.9722};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=1338;
 					type="Move";
-					atlOffset=1.5258789e-005;
 				};
 				class Item27
 				{
@@ -11089,6 +11087,7 @@ class Mission
 				};
 			};
 			id=1307;
+			atlOffset=-0.014862061;
 		};
 		class Item306
 		{
@@ -11106,6 +11105,7 @@ class Mission
 			};
 			id=1334;
 			type="rhssaf_m1025_olive_m2";
+			atlOffset=-0.014862061;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11166,7 +11166,7 @@ class Mission
 			};
 			id=1335;
 			type="rhssaf_army_ural_open";
-			atlOffset=1.9073486e-006;
+			atlOffset=-0.0026454926;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11284,6 +11284,7 @@ class Mission
 			};
 			id=1336;
 			type="rhssaf_army_ural_open";
+			atlOffset=-0.0080776215;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11399,7 +11400,7 @@ class Mission
 			};
 			id=1337;
 			type="rhssaf_army_t72s";
-			atlOffset=1.9073486e-006;
+			atlOffset=-0.011343002;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11574,6 +11575,37 @@ class Mission
 					};
 				};
 				nAttributes=9;
+			};
+		};
+	};
+	class Connections
+	{
+		class LinkIDProvider
+		{
+			nextID=2;
+		};
+		class Links
+		{
+			items=2;
+			class Item0
+			{
+				linkID=0;
+				item0=1303;
+				item1=1305;
+				class CustomData
+				{
+					type="WaypointActivation";
+				};
+			};
+			class Item1
+			{
+				linkID=1;
+				item0=1338;
+				item1=1306;
+				class CustomData
+				{
+					type="WaypointActivation";
+				};
 			};
 		};
 	};
