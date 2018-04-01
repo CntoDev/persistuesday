@@ -24,6 +24,6 @@ private _ammoCacheCargo = [ammo_cache_template] call war_armory_fnc_getCargo;
 	};
 	
 	if (_x find "_vehicle" != -1) then {
-		selectRandom ["rhs_btr70_msv", "rhs_btr80_msv", "rhs_bmp1_msv", "rhs_bmp2_msv", "rhssaf_army_t72s"] createVehicle getMarkerPos _x;
+		selectRandom ["rhs_btr70_msv", "rhs_btr80_msv", "rhs_bmp1_msv", "rhs_bmp2_msv", "rhssaf_army_t72s", "RHS_BM21_MSV_01"] createVehicle getMarkerPos _x;
 	};
 } forEach allMapMarkers;
