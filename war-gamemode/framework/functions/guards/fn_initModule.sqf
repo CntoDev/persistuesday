@@ -22,33 +22,49 @@ private _spawnGroup = {
 	_group
 };
 
+private _spawnGuards = {
+	params ["_team", "_squad", "_mechTeam"];
+	
+	switch (_type) do {
+		case "TOWN": {
+			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
+			[_group] call CBA_fnc_taskDefend;			
+			sleep 3;
+			_group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
+			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+		};
+		case "VILLAGE": {
+			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
+			[_group] call CBA_fnc_taskDefend;			
+			sleep 3;
+			_group = [getMarkerPos _markerName, _side, _team] call _spawnGroup;
+			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+		};
+		case "FACTORY": {
+			private _group = [getMarkerPos _markerName, _side, _mechTeam] call _spawnGroup;
+			[_group] call CBA_fnc_taskDefend;			
+			sleep 3;
+			_group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
+			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+		};
+	};
+};
+
 // load default guard group types
-([] call war_guards_fnc_getGuardData) params ["_westInfantrySquad", "_westInfantryFireteam", "_eastInfantrySquad", "_eastInfantryFireteam", "_resistanceInfantrySquad", "_resistanceInfantryFireteam"];
+([] call war_guards_fnc_getGuardData) params ["_westInfantrySquad", "_westInfantryFireteam", "_eastInfantrySquad", "_eastInfantryFireteam", "_resistanceInfantrySquad", "_resistanceInfantryFireteam", "_westMechanizedSquad", "_eastMechanizedSquad", "_resistanceMechanizedSquad"];
 
 {
 	_x params ["_markerName", "_side", "_type"];
 	
 	switch (_side) do {
 		case west: {
-			_group = [getMarkerPos _markerName, west, _westInfantrySquad] call _spawnGroup;
-			[_group] call CBA_fnc_taskDefend;			
-			sleep 3;
-			_group = [getMarkerPos _markerName, west, _westInfantryFireteam] call _spawnGroup;
-			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+			[_westInfantryFireteam, _westInfantrySquad, _westMechanizedSquad] call _spawnGuards;
 		};
 		case east: {
-			_group = [getMarkerPos _markerName, east, _eastInfantrySquad] call _spawnGroup;
-			[_group] call CBA_fnc_taskDefend;
-			sleep 3;
-			_group = [getMarkerPos _markerName, east, _eastInfantryFireteam] call _spawnGroup;
-			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+			[_eastInfantryFireteam, _eastInfantrySquad, _eastMechanizedSquad] call _spawnGuards;
 		};
 		case resistance: {		
-			_group = [getMarkerPos _markerName, resistance, _resistanceInfantrySquad] call _spawnGroup;
-			[_group] call CBA_fnc_taskDefend;
-			sleep 3;
-			_group = [getMarkerPos _markerName, resistance, _resistanceInfantryFireteam] call _spawnGroup;
-			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+			[_resistanceInfantryFireteam, _resistanceInfantrySquad, _resistanceMechanizedSquad] call _spawnGuards;
 		};
 	};
 } forEach _objectives;
