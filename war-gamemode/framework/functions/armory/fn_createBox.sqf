@@ -17,5 +17,5 @@
 params [["_box", [], [[]], 3]];
 _box params ["_type", "_pos", "_cargo"];
 
-_boxObject = _type createVehicle _pos;
+_boxObject = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
 [_boxObject, _cargo] call war_armory_fnc_loadCargo;
