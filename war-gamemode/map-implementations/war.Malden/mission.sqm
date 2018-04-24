@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1477;
+		nextID=1503;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=38;
+		nextID=43;
 	};
 	class Camera
 	{
-		pos[]={7466.4849,182.47281,8742.3486};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={6015.8599,176.98106,9584.6631};
+		dir[]={0.76824826,-0.64016712,2.5112446e-005};
+		up[]={0.64017284,0.76822937,2.0744228e-005};
+		aside[]={3.1817726e-005,-7.9506307e-008,-1.0000067};
 	};
 };
 binarizationWanted=0;
@@ -51,7 +51,6 @@ addons[]=
 	"CUP_Misc_e_Config",
 	"A3_Soft_F_Gamma_SUV_01",
 	"A3_Soft_F_Gamma_Hatchback_01",
-	"A3_Characters_F_Exp_Civil",
 	"A3_Soft_F_Offroad_01",
 	"rds_A2_Civilians",
 	"rhs_main",
@@ -81,6 +80,7 @@ addons[]=
 	"A3_Structures_F_Civ_Accessories",
 	"A3_Structures_F_Mil_BagFence",
 	"A3_Structures_F_EPB_Civ_Camping",
+	"ace_interaction",
 	"A3_Structures_F_Items_Vessels",
 	"A3_Structures_F_Items_Electronics",
 	"A3_Structures_F_EPA_Items_Vessels",
@@ -96,9 +96,10 @@ addons[]=
 	"A3_Props_F_Orange_Humanitarian_Camps",
 	"A3_Air_F_Orange_UAV_06",
 	"A3_Structures_F_EPA_Civ_Constructions",
-	"ace_interaction",
 	"A3_Structures_F_Mil_Cargo",
-	"A3_Structures_F_EPA_Items_Medical"
+	"A3_Structures_F_EPA_Items_Medical",
+	"cba_xeh",
+	"po_factions_me"
 };
 class AddonsMetaData
 {
@@ -224,168 +225,168 @@ class AddonsMetaData
 		};
 		class Item19
 		{
-			className="A3_Characters_F_Exp";
-			name="Arma 3 Apex - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item20
-		{
 			className="A3_Soft_F";
 			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item20
 		{
 			className="rds_A2_Civilians";
 			name="RDS Civilian Pack Cars";
 			author="reyhard";
 			url="https://forums.bistudio.com/topic/170165-rds-a2-civilian-pack/";
 		};
-		class Item22
+		class Item21
 		{
 			className="rhs_main";
 			name="rhs_main";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item23
+		class Item22
 		{
 			className="rhs_c_troops";
 			name="AFRF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item24
+		class Item23
 		{
 			className="CUP_CAMisc";
 			name="CUP_CAMisc";
 		};
-		class Item25
+		class Item24
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item26
+		class Item25
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item27
+		class Item26
 		{
 			className="rhs_c_weapons";
 			name="AFRF Weapons Pack";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item28
+		class Item27
 		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item29
+		class Item28
 		{
 			className="rhsusf_c_weapons";
 			name="RHSUSF Weapons & Accessories";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item30
+		class Item29
 		{
 			className="ace_compat_rhs_usf3";
 			name="ACE3 - RHS USF Compatibility";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item31
+		class Item30
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item32
+		class Item31
 		{
 			className="ace_optics";
 			name="ACE3 - Optics";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item33
+		class Item32
 		{
 			className="acre_main";
 			name="ACRE2 - Main";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
 		};
-		class Item34
+		class Item33
 		{
 			className="ace_medical";
 			name="ACE3 - Medical";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item35
+		class Item34
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item36
+		class Item35
 		{
 			className="ace_chemlights";
 			name="ace_chemlights";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item37
+		class Item36
 		{
 			className="po_rds_comp";
 			name="po_rds_comp";
 			author="Leight, Keeway";
 		};
-		class Item38
+		class Item37
 		{
 			className="A3_Soft_F_Orange";
 			name="Arma 3 Orange - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item38
 		{
 			className="A3_Weapons_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item40
+		class Item39
 		{
 			className="rhs_c_kamaz";
 			name="KamAZ 5350";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item41
+		class Item40
 		{
 			className="rhsusf_c_fmtv";
 			name="FMTV Trucks";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item42
+		class Item41
 		{
 			className="A3_Structures_F_EPB";
 			name="Arma 3 Adapt Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item42
+		{
+			className="ace_interaction";
+			name="ACE3 - Interaction";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
 		};
 		class Item43
 		{
@@ -450,10 +451,9 @@ class AddonsMetaData
 		};
 		class Item52
 		{
-			className="ace_interaction";
-			name="ACE3 - Interaction";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
+			className="po_factions_me";
+			name="po_factions_me";
+			author="Leight, Keeway";
 		};
 	};
 };
@@ -15264,7 +15264,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=330;
+		items=340;
 		class Item0
 		{
 			dataType="Object";
@@ -20029,21 +20029,19 @@ class Mission
 						angles[]={0,1.3573949,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
 						isPlayable=1;
 					};
-					id=773;
-					type="C_Man_casual_5_F_euro";
-					atlOffset=-7.6293945e-006;
+					id=1481;
+					type="C_man_polo_4_F_euro";
 				};
 			};
 			class Attributes
 			{
 			};
 			id=772;
-			atlOffset=-7.6293945e-006;
 		};
 		class Item187
 		{
@@ -20216,13 +20214,13 @@ class Mission
 						angles[]={0,4.0458651,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
 						isPlayable=1;
 					};
-					id=785;
-					type="C_Man_casual_1_F_euro";
+					id=1484;
+					type="C_man_shorts_1_F_euro";
 				};
 			};
 			class Attributes
@@ -20622,13 +20620,13 @@ class Mission
 						angles[]={0,1.5914609,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
 						isPlayable=1;
 					};
-					id=812;
-					type="C_Man_casual_4_F_euro";
+					id=1499;
+					type="C_man_polo_5_F_euro";
 				};
 			};
 			class Attributes
@@ -20685,13 +20683,13 @@ class Mission
 						angles[]={0,3.2255778,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
 						isPlayable=1;
 					};
-					id=816;
-					type="C_Man_casual_4_F_euro";
+					id=1500;
+					type="C_man_polo_1_F_euro";
 					atlOffset=3.8146973e-005;
 				};
 			};
@@ -20717,13 +20715,13 @@ class Mission
 						angles[]={0,5.8907132,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
 						isPlayable=1;
 					};
-					id=818;
-					type="C_Man_casual_3_F_euro";
+					id=1501;
+					type="C_man_polo_2_F_euro";
 					atlOffset=3.0517578e-005;
 				};
 			};
@@ -20782,13 +20780,13 @@ class Mission
 						angles[]={0,4.0022321,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=6;
 					class Attributes
 					{
 						isPlayable=1;
 					};
-					id=822;
-					type="C_Man_casual_1_F_euro";
+					id=1502;
+					type="C_man_polo_6_F_euro";
 					atlOffset=0.0002822876;
 				};
 			};
@@ -26772,6 +26770,316 @@ class Mission
 			id=1365;
 			type="Land_Defibrillator_F";
 			atlOffset=0.00017929077;
+		};
+		class Item330
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3712.7581,18.298651,3278.729};
+						angles[]={0,3.137526,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1478;
+					type="C_man_polo_2_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1477;
+		};
+		class Item331
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5539.8511,103.77943,4209.4336};
+						angles[]={0,0.00052359875,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1480;
+					type="C_man_polo_5_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1479;
+		};
+		class Item332
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6005.957,125.12144,8568.4395};
+						angles[]={0,4.4754958,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1483;
+					type="C_man_polo_5_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1482;
+		};
+		class Item333
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5541.4438,335.86142,7035.8018};
+						angles[]={0,1.3458234,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1486;
+					type="C_man_polo_4_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1485;
+		};
+		class Item334
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5785.812,55.06266,3495.187};
+						angles[]={0,0.78358299,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1488;
+					type="C_man_1_3_F";
+					atlOffset=3.8146973e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1487;
+			atlOffset=3.8146973e-006;
+		};
+		class Item335
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4014.1509,367.70987,6373.5986};
+						angles[]={0,6.2588205,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1490;
+					type="C_man_polo_2_F";
+					atlOffset=-3.0517578e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1489;
+			atlOffset=-3.0517578e-005;
+		};
+		class Item336
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3118.7571,224.35275,6311.541};
+						angles[]={0,4.4525619,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1492;
+					type="C_man_p_beggar_F";
+					atlOffset=1.5258789e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1491;
+			atlOffset=1.5258789e-005;
+		};
+		class Item337
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4772.1279,414.79745,6780.6509};
+						angles[]={0,2.192884,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1494;
+					type="C_man_polo_5_F";
+					atlOffset=0.00024414063;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1493;
+			atlOffset=0.00024414063;
+		};
+		class Item338
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5108.5801,350.49429,9072.5938};
+						angles[]={0,5.5246654,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1496;
+					type="C_man_w_worker_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1495;
+		};
+		class Item339
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6018.377,174.77969,9585.585};
+						angles[]={0,3.2941694,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=1498;
+					type="C_journalist_F";
+					atlOffset=0.00032043457;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=1497;
+			atlOffset=0.00032043457;
 		};
 	};
 	class Connections
