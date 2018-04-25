@@ -22,7 +22,7 @@ params [
 ([] call war_guards_fnc_getGuardData) params ["_westInfantrySquad", "_westInfantryFireteam", "_eastInfantrySquad", "_eastInfantryFireteam", "_resistanceInfantrySquad", "_resistanceInfantryFireteam"];
 
 (switch (_side) do {
-	case east: { ["RHS_Mi8mt_vdv", getMarkerPos "transport_east", _eastInfantrySquad] };
+	case east: { ["RHS_Mi8mt_Cargo_vdv", getMarkerPos "transport_east", _eastInfantrySquad] };
 	case west: { ["RHS_UH60M2_d", getMarkerPos "transport_west", _westInfantrySquad] };
 }) params ["_vehicleClass", "_spawnPosition", "_squad"];
 
