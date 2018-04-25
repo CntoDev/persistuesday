@@ -19,6 +19,11 @@ private _spawnGroup = {
 	params ["_position", "_side", "_unitType"];
 	private _group = [_position, _side, _unitType] call BIS_fnc_spawnGroup;
 	_group enableDynamicSimulation true;
+	
+	{
+		_x triggerDynamicSimulation false;
+	} forEach units _group;
+	
 	_group
 };
 
@@ -36,9 +41,13 @@ private _spawnGuards = {
 		case "VILLAGE": {
 			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
 			[_group] call CBA_fnc_taskDefend;			
+			
+			/*
+			  Fix #6 - less AI for better performance
 			sleep 3;
 			_group = [getMarkerPos _markerName, _side, _team] call _spawnGroup;
 			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+			*/
 		};
 		case "FACTORY": {
 			private _group = [getMarkerPos _markerName, _side, _mechTeam] call _spawnGroup;
