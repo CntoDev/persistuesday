@@ -453,7 +453,7 @@ class ScenarioData
 	respawnVehicleDelay=10;
 	class Header
 	{
-		gameType="Coop";
+		gameType="TDM";
 	};
 	wreckManagerMode=1;
 	wreckRemovalMaxTime=3600;
