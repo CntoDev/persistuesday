@@ -59,5 +59,7 @@ if (hasInterface) then {
 	
 	private _existingAllegiance = profileNamespace getVariable ["war_allegiance", sideUnknown]; // executed on client's machine	
 	[_existingAllegiance] call war_recruitment_fnc_createBaseMarker;
+	
+	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups; // Initializes the player/client side Dynamic Groups framework	
 };
 

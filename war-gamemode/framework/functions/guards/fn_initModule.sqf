@@ -41,16 +41,9 @@ private _spawnGuards = {
 		case "VILLAGE": {
 			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
 			[_group] call CBA_fnc_taskDefend;			
-			
-			/*
-			  Fix #6 - less AI for better performance
-			sleep 3;
-			_group = [getMarkerPos _markerName, _side, _team] call _spawnGroup;
-			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
-			*/
 		};
 		case "FACTORY": {
-			private _group = [getMarkerPos _markerName, _side, _mechTeam] call _spawnGroup;
+			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
 			[_group] call CBA_fnc_taskDefend;			
 			sleep 3;
 			_group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
