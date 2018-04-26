@@ -4,12 +4,16 @@ if (_allegiance == west) then {
 	player setPos getMarkerPos "respawn_west";
 	_grp = createGroup west;
 	[player] joinSilent _grp;
-	player addUniform "rhs_uniform_cu_ocp";
+	player addUniform "rhsgref_uniform_ERDL";
+	player addVest "AAFVest01_l_green";
+	player addHeadgear "rhsgref_helmet_pasgt_erdl";
 };
 
 if (_allegiance == east) then {
 	player setPos getMarkerPos "respawn_east";
 	_grp = createGroup east;
 	[player] joinSilent _grp;
-	player addUniform "rhs_uniform_msv_emr";
+	player addUniform "LOP_U_UVF_Fatigue_COY_OSW";
+	player addVest "AAFVest01_l_khaki";
+	player addHeadgear "rhs_6b7_1m";
 };
