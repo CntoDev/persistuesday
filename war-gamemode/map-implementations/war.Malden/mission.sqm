@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1526;
+		nextID=1527;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={10105.509,37.831982,4020.5002};
+		pos[]={10109.328,43.93729,4012.3345};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -15252,7 +15252,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=329;
+		items=330;
 		class Item0
 		{
 			dataType="Object";
@@ -24967,6 +24967,47 @@ class Mission
 								};
 							};
 							value="[[[[""rhs_weap_m72a7"",""rhs_weap_m249"",""rhs_weap_m4"",""rhs_weap_m4_m203""],[1,1,4,1]],[[""rhs_200rnd_556x45_B_SAW"",""rhs_mag_30Rnd_556x45_M855_Stanag"",""rhs_mag_M441_HE""],[10,30,5]],[[""ACE_VectorDay"",""ACE_Vector"",""ACE_RangeTable_82mm"",""NVGogglesB_blk_F"",""ItemGPS"",""NVGoggles_OPFOR""],[1,1,1,2,1,1]],[[""I_Mortar_01_support_F"",""I_Mortar_01_weapon_F"",""B_TacticalPack_mcamo""],[1,1,2]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item329
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10112.998,29.190769,4028.1931};
+				angles[]={0,3.3147292,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="ammo_cache_template_east";
+				dynamicSimulation=1;
+			};
+			id=1526;
+			type="Box_FIA_Ammo_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""rhs_weap_m72a7"",""rhs_weap_ak74m_gp25"",""rhs_weap_ak74m"",""rhs_weap_pkm""],[1,1,4,1]],[[""rhs_VOG25"",""rhs_100Rnd_762x54mmR"",""rhs_30Rnd_545x39_AK""],[5,10,30]],[[""ACE_VectorDay"",""ACE_Vector"",""ACE_RangeTable_82mm"",""NVGogglesB_blk_F"",""ItemGPS"",""NVGoggles_OPFOR""],[1,1,1,2,1,1]],[[""I_Mortar_01_support_F"",""I_Mortar_01_weapon_F"",""B_TacticalPack_mcamo""],[1,1,2]]],false]";
 						};
 					};
 				};
