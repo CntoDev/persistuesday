@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1523;
+		nextID=1526;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=63;
+		nextID=68;
 	};
 	class Camera
 	{
-		pos[]={7556.3589,56.436207,6791.0454};
-		dir[]={0.14800864,-0.43803272,-0.88672203};
-		up[]={0.072120212,0.89894855,-0.432073};
-		aside[]={-0.98638284,-4.6828063e-007,-0.16464387};
+		pos[]={10105.509,37.831982,4020.5002};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -15252,7 +15252,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=328;
+		items=329;
 		class Item0
 		{
 			dataType="Object";
@@ -21846,7 +21846,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""rhs_weap_m21a"",""rhs_weap_m21a_pbg40"",""rhs_weap_m84"",""rhs_weap_m72a7""],[4,1,1,1]],[[""rhsgref_30rnd_556x45_m21"",""rhs_VOG25"",""rhs_100Rnd_762x54mmR""],[30,5,10]],[[""ACE_RangeTable_82mm"",""NVGogglesB_blk_F"",""ItemGPS"",""ACE_NVG_Gen4"",""ACE_VectorDay"",""ACE_Vector""],[1,2,1,1,1,1]],[[""I_Mortar_01_support_F"",""I_Mortar_01_weapon_F"",""B_TacticalPack_mcamo""],[1,1,2]]],false]";
+							value="[[[[""rhs_weap_m21a"",""rhs_weap_m21a_pbg40"",""rhs_weap_m84"",""rhs_weap_m72a7""],[4,1,1,1]],[[""rhsgref_30rnd_556x45_m21"",""rhs_VOG25"",""rhs_100Rnd_762x54mmR""],[30,5,10]],[[""ACE_VectorDay"",""ACE_Vector"",""ACE_RangeTable_82mm"",""NVGogglesB_blk_F"",""ItemGPS"",""NVGoggles_OPFOR""],[1,1,1,2,1,1]],[[""I_Mortar_01_support_F"",""I_Mortar_01_weapon_F"",""B_TacticalPack_mcamo""],[1,1,2]]],false]";
 						};
 					};
 				};
@@ -24931,6 +24931,47 @@ class Mission
 			};
 			id=1497;
 			atlOffset=0.00032043457;
+		};
+		class Item328
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10109.293,29.190769,4028.9131};
+				angles[]={0,3.3147292,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="ammo_cache_template_west";
+				dynamicSimulation=1;
+			};
+			id=1525;
+			type="Box_FIA_Ammo_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""rhs_weap_m72a7"",""rhs_weap_m249"",""rhs_weap_m4"",""rhs_weap_m4_m203""],[1,1,4,1]],[[""rhs_200rnd_556x45_B_SAW"",""rhs_mag_30Rnd_556x45_M855_Stanag"",""rhs_mag_M441_HE""],[10,30,5]],[[""ACE_VectorDay"",""ACE_Vector"",""ACE_RangeTable_82mm"",""NVGogglesB_blk_F"",""ItemGPS"",""NVGoggles_OPFOR""],[1,1,1,2,1,1]],[[""I_Mortar_01_support_F"",""I_Mortar_01_weapon_F"",""B_TacticalPack_mcamo""],[1,1,2]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
