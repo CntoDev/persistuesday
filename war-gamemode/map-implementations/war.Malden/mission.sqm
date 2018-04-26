@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1503;
+		nextID=1523;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=48;
+		nextID=63;
 	};
 	class Camera
 	{
-		pos[]={6818.3564,100.00907,5404.9072};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={7556.3589,56.436207,6791.0454};
+		dir[]={0.14800864,-0.43803272,-0.88672203};
+		up[]={0.072120212,0.89894855,-0.432073};
+		aside[]={-0.98638284,-4.6828063e-007,-0.16464387};
 	};
 };
 binarizationWanted=0;
@@ -444,7 +444,7 @@ class AddonsMetaData
 randomSeed=6036509;
 class ScenarioData
 {
-	author="Highway";
+	author="CNTO";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
@@ -18206,11 +18206,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8928.041,21.497744,4379.4868};
+				position[]={8928.041,21.497377,4379.4868};
 			};
 			id=213;
 			type="a3ee_exec_code";
-			atlOffset=0.064365387;
+			atlOffset=0.063999176;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18228,7 +18228,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="/*" \n " * Chat channel disablement; Coop - all except global+group (0+3)" \n " */" \n "" \n "{ _x enableChannel false } forEach [1,2,4,5]";
+							value="/*" \n " * Chat channel disablement; PvP - all except global+side+group (0+1+3)" \n " */" \n "" \n "{ _x enableChannel false } forEach [2,4,5]";
 						};
 					};
 				};
@@ -18373,11 +18373,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8928.041,21.565733,4378.4868};
+				position[]={8928.041,21.565392,4378.4868};
 			};
 			id=214;
 			type="a3ee_exec_code_3den";
-			atlOffset=0.064340591;
+			atlOffset=0.063999176;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -18395,7 +18395,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="/* " \n " * Refer to " \n " * https://community.bistudio.com/wiki/Eden_Editor:_Setting_Attributes " \n " * " \n " * To get existing value for an attribute, put this in debug line: " \n " *   <section> get3DENMissionAttribute <name> " \n " * ie. " \n " *   ""Multiplayer"" get3DENMissionAttribute ""Respawn"" " \n " */ " \n "set3DENMissionAttributes [ " \n "    [""Scenario"", ""Saving"", false], " \n "    [""Scenario"", ""EnableDebugConsole"", 1], " \n "    [""Scenario"", ""SaveBinarized"", false], " \n "    [""Multiplayer"", ""GameType"", ""Coop""], " \n "    [""Multiplayer"", ""DisabledAI"", true], " \n "    [""Multiplayer"", ""Respawn"", 3],  // on custom location " \n "    [""Multiplayer"", ""RespawnTemplates"", []], " \n "    [""Multiplayer"", ""RespawnDelay"", 10], " \n "    [""Multiplayer"", ""RespawnVehicleDelay"", 10], " \n "    [""Multiplayer"", ""RespawnDialog"", false], " \n "    [""Multiplayer"", ""AIKills"", false] " \n "];";
+							value="/* " \n " * Refer to " \n " * https://community.bistudio.com/wiki/Eden_Editor:_Setting_Attributes " \n " * " \n " * To get existing value for an attribute, put this in debug line: " \n " *   <section> get3DENMissionAttribute <name> " \n " * ie. " \n " *   ""Multiplayer"" get3DENMissionAttribute ""Respawn"" " \n " */ " \n "set3DENMissionAttributes [ " \n "    [""Scenario"", ""Saving"", false], " \n "    [""Scenario"", ""EnableDebugConsole"", 1], " \n "    [""Scenario"", ""SaveBinarized"", false], " \n "    [""Multiplayer"", ""GameType"", ""TDM""], " \n "    [""Multiplayer"", ""DisabledAI"", true], " \n "    [""Multiplayer"", ""Respawn"", 3],  // on custom location " \n "    [""Multiplayer"", ""RespawnTemplates"", []], " \n "    [""Multiplayer"", ""RespawnDelay"", 10], " \n "    [""Multiplayer"", ""RespawnVehicleDelay"", 10], " \n "    [""Multiplayer"", ""RespawnDialog"", false], " \n "    [""Multiplayer"", ""AIKills"", false] " \n "];";
 						};
 					};
 				};
