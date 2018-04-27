@@ -13,7 +13,10 @@ Prefix: ``war_recruitment``
 API
 
 	[unit, side] call war_recruitment_fnc_recruitUnit 
-		- recruits unit to side for duration of entire campaign.		
+		- recruits unit to side for duration of entire campaign.
+		
+	[side] call war_recruitment_fnc_createBaseMarker
+		- draws the Blufor or Opfor base marker for a soldier.
 	
 ### Guards module
 
@@ -28,6 +31,12 @@ API
 		
 	[Objective, side] spawn war_guards_fnc_transportReinforcements
 		- spawns reinforcements of the side and transports them towards objective. Reinforcements deploy and start with guard duty.
+	
+	[] call war_guards_fnc_getGuardData
+		- returns types of guard data in array
+
+	[units] call war_guards_fnc_deleteVehicle
+		- deletes soldiers and vehicle in which they are for a specified unit.
 
 ### Armory module
 
@@ -41,22 +50,7 @@ API
 		- initializes module from profile or map
 		
 	[Armory] = [[Armory]] call war_armory_fnc_saveState
-		- updates array of armories and saves state to server profile namespace
-		
-	[door] call war_armory_fnc_lockDoor
-		- locks door of armory
-		
-	[vehicle] call war_armory_fnc_lockVehicle
-		- locks vehicle
-
-	[door] call war_armory_fnc_unlockDoor
-		- unlocks door of armory
-		
-	[vehicle] call war_armory_fnc_unlockVehicle
-		- unlocks vehicle
-		
-	[unit] call war_armory_fnc_assignArmoryCommanderRole
-		- assigns armory commander role to unit		
+		- updates array of armories and saves state to server profile namespace	
 
 	[Box] call war_armory_fnc_createBox
 		- creates an ammo box with associated Cargo
@@ -74,9 +68,6 @@ Periodically reproduce new weapons, ammo, equipment and vehicles.
 Prefix: `war_factories`
 
 API
-
-	[] spawn war_factories_fnc_initModule
-		- initializes module
 	
 	[Factory] spawn war_factories_fnc_produce
 		- produces gear across the map on start of the day according to equipment production table
@@ -92,8 +83,8 @@ API
 	[Objective] = [] spawn war_objectives_fnc_initModule
 		- initializes module
 		
-	side = [Objective] call war_objectives_fnc_owner
-		- returns the side that controls the objective
+	[] call war_objectives_fnc_resetGame
+		- resets game and deletes saved state
 		
 	boolean = [] call war_objectives_fnc_hasWon	
 		- returns true if any side has achieved final victory
@@ -124,21 +115,16 @@ API
 	[Objective] call war_map_fnc_updateMarker
 		- updates the map ownership of the Objective
 		
-	[position, side, enemySide] call war_map_fnc_alert
-		- alerts the players of the side about approaching enemy side on position with a unknown map marker
-		
-### User interface module
+### Environment Module
 
-Handles local player actions and events.
+Fixes the time offset from last event
 
-Prefix: `war_ui`
+Prefix: `war_environment`
 
 API
 
-	[] spawn war_ui_respawnPlayer
-		- called from onPlayerRespawn.sqf. Reads the profile namespace of the player and:
-			1. assigns it to a side (civilian, west, east)
-			2. sets the position of the player
+	[] call war_environment_fnc_setDate
+		- Moves date 8 hours forward
 		
 ## External Code
 
