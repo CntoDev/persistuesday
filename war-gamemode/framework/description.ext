@@ -33,6 +33,7 @@ class CfgFunctions
 			class transportReinforcements;
 			class getGuardData;
 			class deleteVehicle;
+			class sendQRF;
 		};
 	};
 	

@@ -28,21 +28,32 @@ _numberOfDefenders = { side _x == _side } count _units;
 _numberWest = { side _x == west } count _units;
 _numberEast = { side _x == east } count _units;
 _dominantSide = _side;
+_objectiveChangedSides = false;
 
 if (_numberWest > _numberEast && _numberWest > 5*_numberOfDefenders) then {
 	_dominantSide = west;
-	["ObjectiveSeized", [_markerName, _dominantSide, _type]] call CBA_fnc_globalEvent;
-	[_objective, _dominantSide] call war_guards_fnc_transportReinforcements;
+	_objectiveChangedSides = true;
+
 	["West seized " + _markerName, "war_objectives", [true, true, true]] call CBA_fnc_debug;
-	[[_markerName, _dominantSide, _type]] call war_map_fnc_updateMarker;
 };
 
 if (_numberEast > _numberWest && _numberEast > 5*_numberOfDefenders) then {
 	_dominantSide = east;
-	["ObjectiveSeized", [_markerName, _dominantSide, _type]] call CBA_fnc_globalEvent;
-	[_objective, _dominantSide] call war_guards_fnc_transportReinforcements;
+	_objectiveChangedSides = true;
+	
 	["East seized " + _markerName, "war_objectives", [true, true, true]] call CBA_fnc_debug;
-	[[_markerName, _dominantSide, _type]] call war_map_fnc_updateMarker;
+};
+
+if (_objectiveChangedSides) then {
+	["ObjectiveSeized", [_markerName, _dominantSide, _type]] call CBA_fnc_globalEvent;
+	[_objective] call war_guards_fnc_sendQRF;
+	
+	[_objective, _dominantSide] spawn {
+		sleep 600; // wait 10 minutes before sending reinforcements
+		_this call war_guards_fnc_transportReinforcements;
+	};	
+	
+	[[_markerName, _dominantSide, _type]] call war_map_fnc_updateMarker;	
 };
 
 [_markerName, _dominantSide, _type]
