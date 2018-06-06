@@ -35,8 +35,14 @@ private _spawnGuards = {
 			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
 			[_group] call CBA_fnc_taskDefend;			
 			sleep 3;
+			
 			_group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
 			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
+			sleep 3;
+			
+			_group = [getMarkerPos _markerName, _side, _mechTeam] call _spawnGroup;
+			private _waypointGuard = _group addWaypoint [getMarkerPos _markerName, 100];
+			_waypointGuard setWaypointType "GUARD";
 		};
 		case "VILLAGE": {
 			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
@@ -46,6 +52,7 @@ private _spawnGuards = {
 			private _group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
 			[_group] call CBA_fnc_taskDefend;			
 			sleep 3;
+			
 			_group = [getMarkerPos _markerName, _side, _squad] call _spawnGroup;
 			[_group, _group, 200, 10, "MOVE", "AWARE", "YELLOW", "LIMITED", "COLUMN"] call CBA_fnc_taskPatrol;
 		};
