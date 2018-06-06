@@ -17,6 +17,8 @@
 params [["_objective", [], [[]]]];
 _objective params ["_markerName", "_side", "_type"];
 
+if (isNil "qrf_east" || isNil "qrf_west") exitWith {}; // Side QRF not defined in mission
+
 _qrfGroup = if (_side == west) then { qrf_east } else { qrf_west };
 
 _wp = _qrfGroup addWaypoint [getMarkerPos _markerName, 50];
