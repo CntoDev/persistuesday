@@ -1,5 +1,5 @@
 onLoadName = "Malden War";
-author = Highway;
+author = CNTO;
 
 class CfgFunctions
 {
@@ -33,6 +33,7 @@ class CfgFunctions
 			class transportReinforcements;
 			class getGuardData;
 			class deleteVehicle;
+			class sendQRF;
 		};
 	};
 	

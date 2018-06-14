@@ -5,7 +5,7 @@ if (!didJIP && isMultiplayer) then {
 	["STHud_Settings_HUDMode",0] call CBA_settings_fnc_set; // disable sthud temporarily 
 	enableSentences false;
 
-	sleep 20;
+	sleep 5;
 
 	_titleText = composeText [
 		parseText "<t size='2' align='center' font='PuristaMedium'>War</t>",
